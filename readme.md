@@ -5,12 +5,10 @@
 <details>
     <summary>Updates 😍</summary>
     <details>
-        <summary><code><strong>v1.1.0</strong></code></summary>
+        <summary><code><strong>v1.1.1</strong></code></summary>
         <ul>
             <li>Fixed key shortcut issue</li>
-            <li>Changed Keyboard shortcut for zoom in & out</li>
-            <li>improved codebase</li>
-            <li>optimise the code</li>
+            <li>For more productive use volume option</li>
         </ul>
     </details>
 </details>

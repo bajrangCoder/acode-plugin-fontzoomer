@@ -86,14 +86,10 @@ class FontZoomer {
 
     private increaseFont(): void {
         try {
-            const element: HTMLElement = editorManager.editor.container;
-            const font_size: string = window
-                .getComputedStyle(element, null)
-                .getPropertyValue("font-size");
-            let size: string = `${parseInt(font_size.replace("px", "")) + 1}px`;
-            if (size == "70px") return;
-            editorManager.editor.container.style.fontSize = size;
-            appSettings.value.fontSize = size;
+            const font_size: string = editorManager.editor.getFontSize()
+            let size = parseInt(font_size.replace("px", "")) + 1;
+            editorManager.editor.setFontSize(size);
+            appSettings.value.fontSize = size+"px";
             appSettings.update(false);
         } catch (error: any) {
             window.toast(error, 3000);
@@ -102,14 +98,10 @@ class FontZoomer {
 
     private decreaseFont(): void {
         try {
-            const element: HTMLElement = editorManager.editor.container;
-            const font_size: string = window
-                .getComputedStyle(element, null)
-                .getPropertyValue("font-size");
-            let size: string = `${parseInt(font_size.replace("px", "")) - 1}px`;
-            if (size == "8px") return;
-            editorManager.editor.container.style.fontSize = size;
-            appSettings.value.fontSize = size;
+            const font_size: string = editorManager.editor.getFontSize();
+            let size = parseInt(font_size.replace("px", "")) - 1;
+            editorManager.editor.setFontSize(size);
+            appSettings.value.fontSize = size+"px";
             appSettings.update(false);
         } catch (error: any) {
             window.toast(error, 3000);
